@@ -5,15 +5,20 @@ import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.GetMapping;
 
 
 @RestController
+@RequestMapping("/api")
 public class ExampleRestController {
 
-    
-    @GetMapping("/info_details2")
+    /*
+    Request Mapping
+    @RequestMapping(path = "/info_details2", method = RequestMethod.GET)
+    */
+    @GetMapping("info_details2")
     public Map<String, Object> info_details2(){
         Map<String, Object> map = new HashMap<>();
         map.put("title", "Spring Boot Page");
@@ -32,3 +37,4 @@ public class ExampleRestController {
         return ipAddress;
     }
 }
+
