@@ -6,8 +6,14 @@
     <title>Spring Boot Page</title>
 </head>
 <body>
-    <h1 th:text="${title}"></h1>
-    <h2 th:text="${subtitle}"></h2>
-    <p th:text="${'Your IP is: ' + ip}"></p>
+    <div>
+        <h1>Employee Details</h1>
+        <p><strong>Name:</strong> <span th:text="${employee.name}"></span></p>
+        <p><strong>Last Name:</strong> <span th:text="${employee.lastName}"></span></p>
+        <p><strong>Age:</strong> <span th:text="${employee.age}"></span></p>
+        <p><strong>Phone Number:</strong> <span th:text="${employee.phoneNumber}"></span></p>
+        <p><strong>Address:</strong> <span th:text="${employee.street}"></span></p>
+        <p><strong>Job Title:</strong> <span th:text="${employee.job}"></span></p>
+    </div>
 </body>
 </html>

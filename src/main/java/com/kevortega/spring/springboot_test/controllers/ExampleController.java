@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.kevortega.spring.springboot_test.models.Employee;
+
 
 @Controller
 public class ExampleController {
@@ -21,10 +23,8 @@ public class ExampleController {
 
     @GetMapping("/info_details")
     public String info(Model model){
-        model.addAttribute("title", "Server Online");
-        model.addAttribute("subtitle", "Demo");
-        model.addAttribute("ip", "192.168.0.1");
+        Employee employee = new Employee(1, 35, 123456789, "Kevin", "Ortega", "123 Main Street", "Developer");
+        model.addAttribute("employee", employee);
         return "info_details";
     }
-
 }
