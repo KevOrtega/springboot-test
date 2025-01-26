@@ -7,6 +7,9 @@ import java.util.Map;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.kevortega.spring.springboot_test.models.Employee;
+
 import org.springframework.web.bind.annotation.GetMapping;
 
 
@@ -35,6 +38,15 @@ public class ExampleRestController {
             e.printStackTrace();
         }
         return ipAddress;
+    }
+
+    @GetMapping("employee")
+    public Map<String, Object> employee(){
+        Map<String, Object> map = new HashMap<>();
+        Employee employee = new Employee(1, 35, 123456789, "Kevin", "Ortega", "123 Main Street", "Developer");
+        map.put("employee", employee);
+        
+        return map;
     }
 }
 
