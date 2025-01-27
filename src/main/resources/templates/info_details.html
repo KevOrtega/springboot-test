@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spring Boot Page</title>
+    <title >Spring Boot Page</title>
 </head>
 <body>
     <div>
@@ -12,8 +12,35 @@
         <p><strong>Last Name:</strong> <span th:text="${employee.lastName}"></span></p>
         <p><strong>Age:</strong> <span th:text="${employee.age}"></span></p>
         <p><strong>Phone Number:</strong> <span th:text="${employee.phoneNumber}"></span></p>
-        <p><strong>Address:</strong> <span th:text="${employee.street}"></span></p>
+        <p><strong>Address:</strong>
+            <span th:text="${employee.street != null ? employee.street : 'no address'}"> </span>
+        </p>
         <p><strong>Job Title:</strong> <span th:text="${employee.job}"></span></p>
     </div>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+                <th>Job Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="employee : ${Employees}">
+                <td th:text="${employee.id}"></td>
+                <td th:text="${employee.name}"></td>
+                <td th:text="${employee.lastName}"></td>
+                <td th:text="${employee.age}"></td>
+                <td th:text="${employee.phoneNumber}"></td>
+                <td th:text="${employee.street != null ? employee.street : 'no address'}"></td>
+                <td th:text="${employee.job}"></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
