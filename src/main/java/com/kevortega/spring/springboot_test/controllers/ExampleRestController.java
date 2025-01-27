@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kevortega.spring.springboot_test.models.Employee;
+import com.kevortega.spring.springboot_test.models.dto.ClassDTO;
 
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -47,6 +48,15 @@ public class ExampleRestController {
         map.put("employee", employee);
         
         return map;
+    }
+
+    
+    @GetMapping("classdto")
+    public ClassDTO classdto(){
+        ClassDTO classDTO = new ClassDTO();
+        classDTO.setTitle("Class Title");
+        classDTO.setUser("Kevin");
+        return classDTO;
     }
 }
 
