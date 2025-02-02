@@ -2,7 +2,7 @@ package com.kevortega.spring.springboot_test.models;
 
 import java.util.UUID;
 
-public class Product {
+public class Product implements Cloneable {
     private UUID id;
     private String name;
     private int price;
@@ -17,7 +17,7 @@ public class Product {
         return id;
     }
 
-    public void setId(UUID id) {
+    private void setId(UUID id) {
         this.id = id;
     }
 
@@ -35,6 +35,17 @@ public class Product {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    @Override
+    public Object clone() {
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {
+            Product product = new Product(this.name, this.price);
+            product.setId(this.id);
+            return product;
+        }
     }
 }
 
