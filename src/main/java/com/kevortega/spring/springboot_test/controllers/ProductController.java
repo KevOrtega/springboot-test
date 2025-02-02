@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kevortega.spring.springboot_test.models.Product;
-import com.kevortega.spring.springboot_test.services.ProductServiceImp;
+import com.kevortega.spring.springboot_test.services.ProductService;
 
 @RestController
 @RequestMapping("api/product")
 public class ProductController {
 	
     @Autowired
-	private ProductServiceImp productService;
+	private ProductService productService;
 	
 	@GetMapping("/")
 	public List<Product> getAll() {

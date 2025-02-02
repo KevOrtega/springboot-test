@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.kevortega.spring.springboot_test.models.Product;
-import com.kevortega.spring.springboot_test.repositories.ProductRepositoryImp;
+import com.kevortega.spring.springboot_test.repositories.ProductRepository;
 
 @Component
 public class ProductServiceImp implements ProductService {
     
     @Autowired
-    private ProductRepositoryImp productRepository;
+    private ProductRepository productRepository;
     
     public List<Product> getAll() {
         return productRepository.findAll().stream()
