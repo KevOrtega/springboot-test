@@ -4,12 +4,12 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.kevortega.spring.springboot_test.models.Product;
 import com.kevortega.spring.springboot_test.repositories.ProductRepository;
 
-@Component
+@Service
 public class ProductServiceImp implements ProductService {
     
     @Autowired
