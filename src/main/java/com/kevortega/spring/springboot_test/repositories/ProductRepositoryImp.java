@@ -4,8 +4,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.stereotype.Component;
+
 import com.kevortega.spring.springboot_test.models.Product;
 
+@Component
 public class ProductRepositoryImp implements ProductRepository {
     private List<Product> products;
     

@@ -3,12 +3,17 @@ package com.kevortega.spring.springboot_test.services;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.kevortega.spring.springboot_test.models.Product;
 import com.kevortega.spring.springboot_test.repositories.ProductRepositoryImp;
 
+@Component
 public class ProductServiceImp implements ProductService {
     
-    private final ProductRepositoryImp productRepository = new ProductRepositoryImp();
+    @Autowired
+    private ProductRepositoryImp productRepository;
     
     public List<Product> getAll() {
         return productRepository.findAll().stream()
