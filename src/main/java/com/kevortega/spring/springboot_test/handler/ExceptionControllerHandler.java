@@ -12,4 +12,9 @@ public class ExceptionControllerHandler {
         return ResponseEntity.badRequest().body("error: operation not allowed");
     }
 
+    @ExceptionHandler(NumberFormatException.class)
+    public ResponseEntity<String> handleNumberFormatException(NumberFormatException e) {
+        return ResponseEntity.badRequest().body("error: value is not a number");
+    }
+
 }
