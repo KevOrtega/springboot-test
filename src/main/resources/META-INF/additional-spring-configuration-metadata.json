@@ -1,0 +1,26 @@
+{"properties": [
+  {
+    "name": "config.code",
+    "type": "java.lang.Integer",
+    "defaultValue": 123456,
+    "description": "A description for 'config.code'"
+  },
+  {
+    "name": "config.user",
+    "type": "java.lang.String",
+    "defaultValue": "kevortega",
+    "description": "A description for 'config.user'"
+  },
+  {
+    "name": "config.message",
+    "type": "java.lang.String",
+    "defaultValue": "hello world",
+    "description": "A description for 'config.message'"
+  },
+  {
+    "name": "config.values",
+    "type": "java.lang.String[]",
+    "defaultValue": ["hello", "world"],
+    "description": "A description for 'config.values'"
+  }
+]}
